@@ -1,0 +1,190 @@
+:root{
+    --primary-color:#1b205b;
+    --background-color: rgba(250,250,250,.2);
+    --color-white: #fff;
+    --color-grey: #555;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color);
+    background-image: radial-gradient(at 25% 48%,#2e51ed 0,transparent 80%),radial-gradient(at 77% 60%,#775ce7 0,transparent 25%),radial-gradient(at 23% 78%,#05bdba 0,transparent 20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 150px;
+    flex-direction: column;
+}
+header h1{
+    color: var(--color-white);
+    font-size: 64px;
+    font-weight: bolder;
+    margin-block: 32px;
+}
+.lista-container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    height: 880px;
+}
+
+.lista-precio{
+    height: 850px;
+    width: 420px;
+    margin-top: 20px;
+   /* padding: 10px;*/
+    background-color: var(--color-white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+}
+.lista-precio:nth-child(2n){
+    position: relative;
+    z-index: 2;
+    border-left: 5px solid rgb(46, 81, 237, .8);
+    border-right: 5px solid rgb(46, 81, 237, .8);
+    border-top: 3px solid rgb(46, 81, 237, .8);   
+}
+.lista-precio:nth-child(2n):hover{
+    .most-popular{
+        background-color: rgb(46, 81, 237);
+    }
+    border-left: 5px solid rgb(46, 81, 237);
+    border-right: 5px solid rgb(46, 81, 237);
+    border-top: 3px solid rgb(46, 81, 237);  
+}
+.lista-precio:hover{
+    transform: scale(1.05);
+}
+.lista-precio .most-popular{
+    display: flex;
+    align-items: last baseline;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    top: -25px;
+    margin: 0;
+    background-color: rgb(46, 81, 237, .8);
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    text-align: justify;
+    padding: 10px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.lista-precio h1{
+    font-size: 30px;
+    text-align: center;
+    height: 10px;
+}
+.lista-precio .lista-primer-parrafo{
+    font-size: 15px;
+    text-align: center;
+    color: var(--color-grey);
+}
+.lista-precio button{
+    background-color: rgb(46, 81, 237);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 80%;
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.lista-precio button:hover{
+    background-color: rgb(25, 60, 219);
+}
+.lista-precio .precio-container{
+    position: relative;
+    width: 100%;
+    height: 10vh; /* Esto ajusta la altura al 100% del viewport, pero puedes ajustarlo según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    background-color: rgb(207, 207, 207, .3);
+}
+.lista-precio .precio-container h2{
+    font-size: 32px;
+    font-weight: 700;
+}
+.lista-precio .precio-container p{
+    color: var(--color-grey);
+    font-size: 16px;
+}
+.lista-precio ul{
+    list-style: none;
+    padding: 0;
+}
+.lista-precio ul p{
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+.lista-precio ul li{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+.lista-precio ul li i{
+    color: #75FA8D;
+    margin-right: 10px;
+    font-size: 21px;
+}
+
+@media(max-width: 1500px){
+    .lista-precio{
+        width: 380px;
+    }
+}
+@media(max-width: 1300px){
+    .lista-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 2800px;
+    }
+    .lista-precio{
+        width: 80%;
+    }
+   
+    .lista-precio:nth-child(3n) ul{
+       height: 400px;
+       width: 400px;
+    }
+}
+@media(max-width: 600px){
+    .lista-precio:nth-child(3n){
+       height: 1000px;
+    }
+    header h1{
+        font-size: 48px;
+        text-align: center;
+    }
+    .lista-precio button{
+        height: 40px;
+    }
+    .lista-precio:nth-child(3n) ul{
+        height: 300px;
+        width: 300px;
+     }
+}
+@media(max-width: 450px){
+    .lista-precio:nth-child(3n) ul{
+        height: 250px;
+        width: 250px;
+     }
+}
